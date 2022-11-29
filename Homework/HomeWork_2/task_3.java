@@ -15,30 +15,31 @@ public class task_3 {
      */
     public static void main(String[] args)throws IOException {
         Logger logger  = Logger.getLogger(task_3.class.getName()); //init
-        Scanner iScanner = new Scanner(System.in);
+        // Scanner iScanner = new Scanner(System.in);
         System.out.println("Что будем делать?");
         System.out.println("1 - Сложение");
         System.out.println("2 - Разница");
         System.out.println("3 - Деление");
         System.out.println("4 - Умножение");
         System.out.print("Отлично! Начнем : ");
-        Scanner sc = new Scanner(System.in); //Считываеми с клавы 
-        int vibor = sc.nextInt(); 
+        Scanner sc = new Scanner(System.in); //Считываем с клавы 
+        int vibor = sc.nextInt(); // записываем результат в переменную 
+
 
         System.out.print("Введите первое число : "); 
-        int x = sc.nextInt();
-        // String one = String.format("%d", x);
+        int x = sc.nextInt();//записываем результат в переменную 
         logger.info(Integer.toString(x)); // записываем в логгер 
+
 
         System.out.print("Введите второе число : ");
         int y = sc.nextInt();
         logger.info(Integer.toString(y));// записываем в логгер 
 
-        int c = 0;
+        int c = 0; //счетчик 
         
-        FileHandler fh = new FileHandler("log.log", true);
+        FileHandler fh = new FileHandler("logTask_3.log", true); //создаем log 
         logger.addHandler(fh); //Объект используется для регистрации сообщений для конкретной системы или компонента приложения.
-        Formatter log = new SimpleFormatter(); //я с сума сошел искать этот метод 
+        SimpleFormatter log = new SimpleFormatter();
         fh.setFormatter(log);
         String str = String.format("%d", vibor); //форматируем int в string 
         logger.info(str); //запмсываем в логгер / записывается только в str 
@@ -66,10 +67,8 @@ public class task_3 {
                 break;
                 
             }
-            logger.info(Float.toString(x) + " " + str + " " + Float.toString(y) + " " + "=" + " " + c);
-        // int[] intArray= new int[]{(vibor)};
-        // String str = String.format("%d", intArray);
-        // logger.log(Level.INFO, String.valueOf(intArray) + " " + Arrays.toString(intArray));
+            logger.info(Float.toString(x) + " " + str + " " + Float.toString(y) + " " + "=" + " " + c); //перебор вывода в логер
+        
 
     }
 }
