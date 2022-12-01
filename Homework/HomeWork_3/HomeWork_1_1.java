@@ -1,11 +1,12 @@
-
+import java.util.ArrayList;
 import java.util.Arrays;
-import java.io.IOException; //Сигналы о том, что произошло какое-либо исключение ввода-вывода. Этот класс является общим классом исключений, вызванных неудачными или прерванными операциями ввода-вывода.
-import java.util.logging.Logger;
-import java.util.logging.FileHandler;
-import java.util.logging.*;
+import java.util.List;
 
-public class HomeWork_1 {
+/*
+тут пытался сделать logger в отдельный клас/ничего не вышло
+ */
+
+public class HomeWork_1_1 {
     public static void merge(int[] arr, int[] aux, int low, int mid, int high)//метод слияния
     {
         int k = low, i = low, j = mid + 1; //определяем типизацию и присвоение
@@ -46,22 +47,23 @@ public class HomeWork_1 {
     }
 
     public static void main(String[] args) {
-        Logger logger = Logger.getLogger(HomeWork_1.class.getName());//init log
-        FileHandler fh = null; //создаем log
-        try {
-            fh = new FileHandler("logTask_1.log", true);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        logger.addHandler(fh); //Объект используется для регистрации сообщений для конкретной системы или компонента приложения.
-        SimpleFormatter log = new SimpleFormatter();
-        fh.setFormatter(log);
+        Logger logger = Logger.getInstance();
+//    {   Logger logger  = Logger.getLogger(HomeWork_11.class.getName());//init log
+//        FileHandler fh = null; //создаем log
+//        try {
+//            fh = new FileHandler("logTask_11.log", true);
+//        } catch (IOException e) {
+//            throw new RuntimeException(e);
+//        }
+//        logger.addHandler(fh); //Объект используется для регистрации сообщений для конкретной системы или компонента приложения.
+//        SimpleFormatter log = new SimpleFormatter();
+//        fh.setFormatter(log);
 
         int[] arr = RANDOM();
 //        int[] arr = { 12, 3, 18, 24, 0, 5, -2 };
         System.out.printf("Исходный массив: %s \n", Arrays.toString(arr));
 
-        logger.info(Arrays.toString(arr)); // запись в log
+//        logger.info(Arrays.toString(arr)); // запись в log
 
 
         int[] aux = Arrays.copyOf(arr, arr.length);
@@ -69,7 +71,7 @@ public class HomeWork_1 {
         // сортируем массив `arr`, используя вспомогательный массив `aux`
         mergesort(arr, aux, 0, arr.length - 1);
         System.out.printf("Отсортированный массив: %s ", Arrays.toString(arr));
-        logger.info(Arrays.toString(arr));// запись в log
+//        logger.info(Arrays.toString(arr));// запись в log
 
         //logger.info(Arrays.toString(arr) + " " + " " + Arrays.toString(arr) + " " + "=" + " " +Arrays.toString(aux)); //перебор вывода в логер
     }
@@ -78,11 +80,40 @@ public class HomeWork_1 {
     private static int[] RANDOM() {//метод рандома
         int[] arr = new int[20];
         for (int i = 0; i < arr.length; i++) {
-            arr[i] = ((int) (Math.random() * 51) - 15);
+            arr[i] = ((int) (Math.random() * 31) - 15);
         }
         return arr;
     }
+
+    public class Logger {
+        private static Logger logger;
+
+        private Logger() {
+        }
+
+        public static Logger getInstance() {
+            //...
+            return null;
+        }
+    }
+
+    public class Filter {
+        protected int treshold;
+
+        public Filter(int treshold) {
+            this.treshold = treshold;
+        }
+
+        public List<Integer> filterOut(List<Integer> source) {
+            Logger logger = Logger.getInstance();
+            List<Integer> result = new ArrayList<>();
+            //..
+            return result;
+        }
+    }
+
 }
+
  /*
  как в логгере записать в графу info обозначение ?
  например INFO: Исходный массив: и тд...
