@@ -1,12 +1,18 @@
 ## Урок 3. Коллекции JAVA: Введение
 ```json
+ ( ( .  (   (   (   (( (     ( .  (   (   (           (    
+ )\)\ . )\  )\: )\ (\())\    )\ . )\  )\  )\          )\   
+(_)(_) ((_)((_)((_))(_)(_)  ((() ((_)((_)((_)__      ((_)_ 
+| || |/ _ \|  \/  | __| \    / // _ \| _ \ |/ /      |__ / 
+| __ | (_) | |\/| | _| \ \/\/ /| (_) |   /   <        |_ \ 
+|_||_|\___/|_|  |_|___| \_/\_/  \___/|_|_\_|\_\      |___/ 
 
 ```
 Домашнее задание Семинар 3
 >
 1. Реализовать алгоритм сортировки слиянием.
 >Прикрутил логгер и рандом в отдельный класс 
-> Как в логгере записать в графу info обозначение ?
+> Как в логгер записать в графу info обозначение ?
 Например, INFO: Исходный массив: и тд...
 и         INFO: Отсортированный массив: и тд...
 >Как вывести логгер в отдельный метод ? я пробовал ничего не выходит
@@ -85,7 +91,7 @@ public class HomeWork_1 {
         System.out.printf("Отсортированный массив: %s ", Arrays.toString(arr));
         logger.info(Arrays.toString(arr));// запись в log
 
-        //logger.info(Arrays.toString(arr) + " " + " " + Arrays.toString(arr) + " " + "=" + " " +Arrays.toString(aux)); //перебор вывода в логер
+        //logger.info(Arrays.toString(arr) + " " + " " + Arrays.toString(arr) + " " + "=" + " " +Arrays.toString(aux)); //перебор вывода в логгер
     }
 
 
@@ -104,14 +110,14 @@ public class HomeWork_1 {
   */
 ```
 ### HomeWork_1_1 Вариант 2
->Тут пытался сделать logger в отдельный клас/ничего не вышло
+>Тут пытался сделать logger в отдельный класс/ничего не вышло
 ```java
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 /*
-тут пытался сделать logger в отдельный клас/ничего не вышло
+тут пытался сделать logger в отдельный класс/ничего не вышло
  */
 
 public class HomeWork_1_1 {
@@ -181,7 +187,7 @@ public class HomeWork_1_1 {
         System.out.printf("Отсортированный массив: %s ", Arrays.toString(arr));
 //        logger.info(Arrays.toString(arr));// запись в log
 
-        //logger.info(Arrays.toString(arr) + " " + " " + Arrays.toString(arr) + " " + "=" + " " +Arrays.toString(aux)); //перебор вывода в логер
+        //logger.info(Arrays.toString(arr) + " " + " " + Arrays.toString(arr) + " " + "=" + " " +Arrays.toString(aux)); //перебор вывода в логгер
     }
 
 
@@ -235,8 +241,8 @@ public class HomeWork_1_1 {
 перевел его в Array.asList 
 добавил в лист arre
 проверил на кратность 2 
-удаляем эити числа
-подробные коммеетарии указал.
+удаляем эти числа
+подробные комментарии указал.
 Рабочее простое решение в HomeWork_3_2
 ### HomeWork_2 Вариант 1
 ```java
@@ -257,7 +263,7 @@ public class HomeWork_2 {
 
         List arre = new ArrayList<>();//init
         Arrays.asList(arr); //формирования списка из массива
-        System.out.println("Произвольный список: " + Arrays.toString(arr)); //Ввывод без проблемм
+        System.out.println("Произвольный список: " + Arrays.toString(arr)); //Вывод без проблемм
         arre.add(arr); //добавляю произвольный массив в list
 //        arre.removeIf(num -> num % 2 == 0);
 //        System.out.println(arre);
