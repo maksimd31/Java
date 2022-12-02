@@ -263,12 +263,12 @@ public class HomeWork_2 {
 
         List arre = new ArrayList<>();//init
         Arrays.asList(arr); //формирования списка из массива
-        System.out.println("Произвольный список: " + Arrays.toString(arr)); //Вывод без проблемм
+        System.out.println("Произвольный список: " + Arrays.toString(arr)); //Вывод без проблема
         arre.add(arr); //добавляю произвольный массив в list
 //        arre.removeIf(num -> num % 2 == 0);
 //        System.out.println(arre);
 
-        for (int i = 0; i < arre.size(); i++) { // Пробигаемся по массиву
+        for (int i = 0; i < arre.size(); i++) { // Пробегаемся по массиву
             int even = (int) arre.get(i) % 2; //проверяем кратность 2
 
             if (even == 0) {
@@ -407,7 +407,7 @@ public class HomeWork_3 {
 }
 ```
 ### HomeWork_3_2 Вариант 2
->Вариано посложнее (Сделано при помщи коллег)
+>Вариант посложнее (Сделано при помощи коллег)
 ```java
 import java.io.IOException;
 import java.util.ArrayList;
