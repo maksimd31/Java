@@ -53,18 +53,17 @@ public class task_2 {
 
         int AA = enqueue((LinkedList<Integer>) earlBio); //помещает элемент в конец очереди
         logger.info(new StringBuilder().append("Добавленниый элемент: ").append(Arrays.toString(
-                new List[]{Collections.singletonList(AA)})).
+                        new List[]{Collections.singletonList(AA)})).
                 append("\n_____________________________________________________").toString());
 
-        System.out.printf("Cписок с добавленным элементом: %s\n",earlBio);
+        System.out.printf("Cписок с добавленным элементом: %s\n", earlBio);
         logger.info("Cписок с добавленным элементом: " + Arrays.toString(new List[]{(List) earlBio})
                 + "\n_____________________________________________________");
 
 
-
         int BB = size(earlBio); // размер списка
         logger.info(new StringBuilder().append("Размер списка в LinkedList: ").append(Arrays.toString(
-                new List[]{Collections.singletonList(BB)})).
+                        new List[]{Collections.singletonList(BB)})).
                 append("\n_____________________________________________________").toString());
 
 
@@ -100,30 +99,30 @@ public class task_2 {
     private static int dequeue(LinkedList<Integer> earlBio) {
         Integer first = earlBio.get(0);
         earlBio.remove(0);
-        System.out.printf("Удаленный элемент: %s\n",first);
+        System.out.printf("Удаленный элемент: %s\n", first);
         return first;
     }
 
     private static int first(LinkedList<Integer> earlBio) {
         Integer first = earlBio.get(0);
-        System.out.printf("Первый элемент очереди: %s\n",first);
+        System.out.printf("Первый элемент очереди: %s\n", first);
         return first;
     }
 
-    private static int size (Queue<Integer> earlBio) {
+    private static int size(Queue<Integer> earlBio) {
         int aa = earlBio.size();
-        System.out.printf("Размер списка: %s\n",aa);
+        System.out.printf("Размер списка: %s\n", aa);
 
         return aa;
     }
 
 
-    public static int enqueue (LinkedList <Integer> earlBio ) { //Добавляет элемент в конец сиска при вызове
+    public static int enqueue(LinkedList<Integer> earlBio) { //Добавляет элемент в конец сиска при вызове
         // не понял как сделать что бы добавлял что типа append.
         earlBio.add(getRandomNumber(10));
         int ae = earlBio.get(7); //по индексу не вышло вывести добавлениый элемент
         // если ставить вывод по индексу  -1  выдает Exsrpsion
-        System.out.printf("Добавлениый элеменит %s\n",ae);
+        System.out.printf("Добавлениый элеменит %s\n", ae);
 //        System.out.printf("Добавлениый элеменит %s\n",earlBio);
 //        return earlBio;
         return ae;
