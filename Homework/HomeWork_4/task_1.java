@@ -2,6 +2,7 @@ import java.util.*;
 import java.util.Collections;
 
 /*
+Починил все работает
 Пытался прикрутить массив из рандома ничего не вышло все срабатывает до метода Collections.reverse(Arrays.asList(earlBio));
 затем он не делает reverse
  */
@@ -14,12 +15,14 @@ public class task_1 {
 
         long start = System.currentTimeMillis();//Старт замера времени
 
-        int[] arr = RANDOM(); //рандомом заполняем массив
-        String arre = new String(Arrays.toString(arr)); // конвертируем в str
-        System.out.printf("Массив int: %s \n", arre); //
-
-        List<String> earlBio = new LinkedList<String>(); //создаем linkedList
-        earlBio.add(arre); //добавляем в него рандомный массив
+//        int[] arr = RANDOM(); //рандомом заполняем массив
+//        String arre = new String(Arrays.toString(arr)); // конвертируем в str
+//        System.out.printf("Массив int: %s \n", arre); //
+        Random rnd = new Random();
+        List<Integer> earlBio = new LinkedList<>(); //создаем linkedList
+        for (int i = 0; i <10 ; i++) {
+            earlBio.add(rnd.nextInt(100));//добавляем в него рандомный массив
+        }
 
         System.out.printf("Запись в LinkedList: %s \n", earlBio); //Внутри LinkedList нет массива, как в ArrayList, или чего-то похожего.
         // Вся работа с ArrayList (по большому счету) сводится к работе с внутренним массивом.

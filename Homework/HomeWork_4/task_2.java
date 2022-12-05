@@ -32,6 +32,7 @@ public class task_2 {
 
 
         Queue<Integer> earlBio = new LinkedList<>(); //создаем linkedList
+
         earlBio.add(getRandomNumber(10));//добавляем в него рандомный массив
         earlBio.add(getRandomNumber(10));
         earlBio.add(getRandomNumber(10));
@@ -127,6 +128,7 @@ public class task_2 {
 //        return earlBio;
         return ae;
     }
+
 
 
     public static int getRandomNumber(int i) { // генерирует случайное число

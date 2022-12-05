@@ -5,6 +5,7 @@ import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
 /*
+2 варианта рандомайзера
 Вариант с рандомом (единственный рабочий вариант с рандомом),
 с работающим Collections.reverse(earlBio);
 + logger
@@ -33,13 +34,19 @@ public class task_1_3 {
 
 
         List<Integer> earlBio = new LinkedList<>(); //создаем linkedList
-        earlBio.add(getRandomNumber(10));//добавляем в него рандомный массив
-        earlBio.add(getRandomNumber(10));
-        earlBio.add(getRandomNumber(10));
-        earlBio.add(getRandomNumber(10));
-        earlBio.add(getRandomNumber(10));
-        earlBio.add(getRandomNumber(10));
-        earlBio.add(getRandomNumber(10));
+        Random rnd = new Random();
+        for (int i = 0; i < 10; i++) {
+            earlBio.add(rnd.nextInt(100));
+
+        }
+//        earlBio.add(getRandomNumber(10));//добавляем в него рандомный массив
+//        earlBio.add(getRandomNumber(10));
+//        earlBio.add(getRandomNumber(10));
+//        earlBio.add(getRandomNumber(10));
+//        earlBio.add(getRandomNumber(10));
+//        earlBio.add(getRandomNumber(10));
+//        earlBio.add(getRandomNumber(10));
+//
 
 
         System.out.printf("Запись в LinkedList: %s \n", earlBio); //Внутри LinkedList нет массива, как в ArrayList, или чего-то похожего.
@@ -58,11 +65,11 @@ public class task_1_3 {
                 + "\n*====================================================*");
     }
 
-    public static int getRandomNumber(int i) { // генерирует случайное число
-        double x = (Math.random() * 99);
-        int num = (int) x;
-        return num;
-    }
+//    public static int getRandomNumber(int i) { // генерирует случайное число
+//        double x = (Math.random() * 99);
+//        int num = (int) x;
+//        return num;
+//    }
 
 
 }

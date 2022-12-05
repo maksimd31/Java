@@ -3,13 +3,15 @@
 Домашнее задание Семинар 
 # 1.Пусть дан LinkedList с несколькими элементами. Реализуйте метод, который вернет “перевернутый” список.
 ## вариант 1
->Вариант 1: пытался прикрутить массив из рандома ничего не вышло все срабатывает до метода Collections.reverse(Arrays.asList(earlBio));
+>Поченил все работает
+Вариант 1: пытался прикрутить массив из рандома ничего не вышло все срабатывает до метода Collections.reverse(Arrays.asList(earlBio));
 затем он не делает reverse.
 ```java
 import java.util.*;
 import java.util.Collections;
 
 /*
+Починил все работает 
 Пытался прикрутить массив из рандома ничего не вышло все срабатывает до метода Collections.reverse(Arrays.asList(earlBio));
 затем он не делает reverse
  */
@@ -20,14 +22,16 @@ import java.util.Collections;
 public class task_1 {
     public static void main(String[] args) {
 
-        long start = System.currentTimeMillis();//Старт замера времени 
+        long start = System.currentTimeMillis();//Старт замера времени
 
-        int[] arr = RANDOM(); //рандомом заполняем массив
-        String arre = new String(Arrays.toString(arr)); // конвертируем в str
-        System.out.printf("Массив int: %s \n", arre); //
-
-        List<String> earlBio = new LinkedList<String>(); //создаем linkedList
-        earlBio.add(arre); //добавляем в него рандомный массив
+//        int[] arr = RANDOM(); //рандомом заполняем массив
+//        String arre = new String(Arrays.toString(arr)); // конвертируем в str
+//        System.out.printf("Массив int: %s \n", arre); //
+        Random rnd = new Random();
+        List<Integer> earlBio = new LinkedList<>(); //создаем linkedList
+        for (int i = 0; i <10 ; i++) {
+            earlBio.add(rnd.nextInt(100));//добавляем в него рандомный массив
+        }
 
         System.out.printf("Запись в LinkedList: %s \n", earlBio); //Внутри LinkedList нет массива, как в ArrayList, или чего-то похожего.
         // Вся работа с ArrayList (по большому счету) сводится к работе с внутренним массивом.
@@ -41,7 +45,7 @@ public class task_1 {
 //        System.out.printf("Развернутый список: %s \n", earlBio);
 
 
-//        earlBio = reverse(earlBio);//не работает 
+//        earlBio = reverse(earlBio);//не работает
         System.out.printf("Развернутый список: %s \n", earlBio);
 
 
@@ -76,22 +80,20 @@ public class task_1 {
  */
 ```
 ## Вариант 2 
->Вариант без рандома, но с работающим Collections.reverse(earlBio); 
+
+>[ПОЧЕНИЛ вариант с рандомом]Вариант без рандома, но с работающим Collections.reverse(earlBio); 
 + logger 
 + замер времени выполнения программы.
 Пытался прикрутить цветовую палитру в logger. Но цвета срабатывают только в консоли в logger цвета не меняются.
 ```java
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 import java.util.logging.FileHandler;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
 /*
-Вариант без рандома, но с работающим Collections.reverse(earlBio); + logger + замер времени выполнения программы.
+Вариант c  рандома, но с работающим Collections.reverse(earlBio); + logger + замер времени выполнения программы.
 Пытался прикрутить цветовую палитру в logger. Но цвета срабатывают только в консоли в logger цвета не меняются.
  */
 
@@ -102,7 +104,7 @@ import java.util.logging.SimpleFormatter;
 public class task_1_2 {
     public static void main(String[] args) {
 
-        long start = System.currentTimeMillis();//Старт замера времени 
+        long start = System.currentTimeMillis();//Старт замера времени
 
 
         Logger logger = Logger.getLogger(task_1_2.class.getName());//init log
@@ -117,17 +119,21 @@ public class task_1_2 {
         fh.setFormatter(log);
 
 
-        List<Integer> earlBio = new LinkedList<>(); //создаем linkedList
-        earlBio.add(1);//добавляем в него рандомный массив
-        earlBio.add(2);
-        earlBio.add(3);
-        earlBio.add(4);
-        earlBio.add(5);
-        earlBio.add(6);
-        earlBio.add(7);
-        earlBio.add(8);
-        earlBio.add(9);
-        earlBio.add(10);
+        Random rnd = new Random();
+        List<Integer> earlBio = new LinkedList<>();
+        for (int i = 0; i < 10; i++) {
+            earlBio.add(rnd.nextInt(100));
+        }//добавляем в него рандомный массив//создаем linkedList
+//        earlBio.add(1);//добавляем в него рандомный массив
+//        earlBio.add(2);
+//        earlBio.add(3);
+//        earlBio.add(4);
+//        earlBio.add(5);
+//        earlBio.add(6);
+//        earlBio.add(7);
+//        earlBio.add(8);
+//        earlBio.add(9);
+//        earlBio.add(10);
 
         System.out.printf("Запись в LinkedList: %s \n", earlBio); //Внутри LinkedList нет массива, как в ArrayList, или чего-то похожего.
         // Вся работа с ArrayList (по большому счету) сводится к работе с внутренним массивом.
@@ -141,27 +147,28 @@ public class task_1_2 {
 
 
         System.out.print("Время работы для LinkedList (в миллисекундах) = " + (System.currentTimeMillis() - start));//вывод и замер времени
-        logger.info(ANSI_GREEN + "Время работы для LinkedList (в миллисекундах)" + +(System.currentTimeMillis() - start)
-                + ANSI_RED + "\n*====================================================*");
+        logger.info("Время работы для LinkedList (в миллисекундах)" + +(System.currentTimeMillis() - start)
+                + "\n*====================================================*");
     }
 
-    public static final String ANSI_GREEN = "\u001B[32m";
-    public static final String ANSI_RESET = "\u001B[0m";
-    public static final String ANSI_BLACK = "\u001B[30m";
-    public static final String ANSI_RED = "\u001B[31m";
-    public static final String ANSI_YELLOW = "\u001B[33m";
-    public static final String ANSI_BLUE = "\u001B[34m";
-    public static final String ANSI_PURPLE = "\u001B[35m";
-    public static final String ANSI_CYAN = "\u001B[36m";
-    public static final String ANSI_WHITE = "\u001B[37m";
-
+    private static void extracted() {
+        String ANSI_GREEN = "\u001B[32m";
+        String ANSI_RESET = "\u001B[0m";
+        String ANSI_BLACK = "\u001B[30m";
+        String ANSI_RED = "\u001B[31m";
+        String ANSI_YELLOW = "\u001B[33m";
+        String ANSI_BLUE = "\u001B[34m";
+        String ANSI_PURPLE = "\u001B[35m";
+        String ANSI_CYAN = "\u001B[36m";
+        String ANSI_WHITE = "\u001B[37m";
+    }
 }
 /*
 В LinkedList элементы фактически представляют собой звенья одной цепи. У каждого элемента помимо тех данных, которые он хранит, имеется ссылка на предыдущий и следующий элемент. По этим ссылкам можно переходить от одного элемента к другому.
  */
 ```
 ## Вариант 3
->Вариант с рандомом (единственный рабочий вариант с рандомом),
+>[ПОЧЕНИЛ 2 варинта с рандомайзером] Вариант с рандомом (единственный рабочий вариант с рандомом),
 с работающим Collections.reverse(earlBio);
 + logger
 + замер времени выполнения программы.
@@ -173,6 +180,7 @@ import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
 /*
+2 варианта рандомайзера 
 Вариант с рандомом (единственный рабочий вариант с рандомом),
 с работающим Collections.reverse(earlBio);
 + logger
@@ -185,7 +193,7 @@ import java.util.logging.SimpleFormatter;
 public class task_1_3 {
     public static void main(String[] args) {
 
-        long start = System.currentTimeMillis();//Старт замера времени
+        long start = System.currentTimeMillis();//Старт замера времени 
 
 
         Logger logger = Logger.getLogger(task_1_3.class.getName());//init log
@@ -201,13 +209,19 @@ public class task_1_3 {
 
 
         List<Integer> earlBio = new LinkedList<>(); //создаем linkedList
-        earlBio.add(getRandomNumber(10));//добавляем в него рандомный массив
-        earlBio.add(getRandomNumber(10));
-        earlBio.add(getRandomNumber(10));
-        earlBio.add(getRandomNumber(10));
-        earlBio.add(getRandomNumber(10));
-        earlBio.add(getRandomNumber(10));
-        earlBio.add(getRandomNumber(10));
+        Random rnd = new Random();
+        for (int i = 0; i < 10; i++) {
+            earlBio.add(rnd.nextInt(100));
+
+        }
+//        earlBio.add(getRandomNumber(10));//добавляем в него рандомный массив
+//        earlBio.add(getRandomNumber(10));
+//        earlBio.add(getRandomNumber(10));
+//        earlBio.add(getRandomNumber(10));
+//        earlBio.add(getRandomNumber(10));
+//        earlBio.add(getRandomNumber(10));
+//        earlBio.add(getRandomNumber(10));
+//
 
 
         System.out.printf("Запись в LinkedList: %s \n", earlBio); //Внутри LinkedList нет массива, как в ArrayList, или чего-то похожего.
@@ -226,11 +240,11 @@ public class task_1_3 {
                 + "\n*====================================================*");
     }
 
-    public static int getRandomNumber(int i) { // генерирует случайное число
-        double x = (Math.random() * 99);
-        int num = (int) x;
-        return num;
-    }
+//    public static int getRandomNumber(int i) { // генерирует случайное число
+//        double x = (Math.random() * 99);
+//        int num = (int) x;
+//        return num;
+//    }
 
 
 }
