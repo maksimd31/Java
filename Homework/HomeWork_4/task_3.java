@@ -20,6 +20,7 @@ public class task_3 {
      * @throws IOException
      */
     public static void main(String[] args) throws IOException {
+        long start = System.currentTimeMillis();//Старт замера времени
         Logger logger = Logger.getLogger(task_3.class.getName()); //init
         // Scanner iScanner = new Scanner(System.in);
         System.out.println("Что будем делать?");
@@ -48,7 +49,7 @@ public class task_3 {
         SimpleFormatter log = new SimpleFormatter();
         fh.setFormatter(log);
         String str = String.format("%d", vibor); //форматируем int в string
-//        logger.info(str); //запмсываем в логгер / записывается только в str
+//        logger.info(str); //записываем в логгер / записывается только в str
 
 
         switch (vibor) {
@@ -85,6 +86,10 @@ public class task_3 {
                 c + "\n***************************************"); //перебор вывода в логер
         //блок стека DEQUE
 //        deque(c);
+        System.out.print("\nВремя работы для LinkedList (в миллисекундах) = " + (System.currentTimeMillis() - start));//вывод и замер времени
+        logger.info("\nВремя работы для LinkedList (в миллисекундах)" + +(System.currentTimeMillis() - start)
+                + "\n*====================================================*");
+
 
 
     }
@@ -103,7 +108,7 @@ public class task_3 {
         } else if (Objects.equals(VV, "нет")) {
             System.out.print("не очень то откатывать и хотелось");
         } else {
-            System.out.print("Промазал завай по новой");
+            System.out.print("Промазал давай по новой");
 //            return VV;
         }
         return VV;

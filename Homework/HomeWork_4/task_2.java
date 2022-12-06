@@ -53,12 +53,12 @@ public class task_2 {
                 append("\n_____________________________________________________").toString());
 
         int AA = enqueue((LinkedList<Integer>) earlBio); //помещает элемент в конец очереди
-        logger.info(new StringBuilder().append("Добавленниый элемент: ").append(Arrays.toString(
+        logger.info(new StringBuilder().append("Добавленный элемент: ").append(Arrays.toString(
                         new List[]{Collections.singletonList(AA)})).
                 append("\n_____________________________________________________").toString());
 
-        System.out.printf("Cписок с добавленным элементом: %s\n", earlBio);
-        logger.info("Cписок с добавленным элементом: " + Arrays.toString(new List[]{(List) earlBio})
+        System.out.printf("Список с добавленным элементом: %s\n", earlBio);
+        logger.info("Список с добавленным элементом: " + Arrays.toString(new List[]{(List) earlBio})
                 + "\n_____________________________________________________");
 
 
@@ -82,7 +82,7 @@ public class task_2 {
 
 
         System.out.printf("итоговая запись в LinkedList: %s \n", earlBio);
-        logger.info("Cписок с добавленным элементом: " + Arrays.toString(new List[]{(List) earlBio})
+        logger.info("Список с добавленным элементом: " + Arrays.toString(new List[]{(List) earlBio})
                 + "\n_____________________________________________________");
         //Внутри LinkedList нет массива, как в ArrayList, или чего-то похожего.
 
@@ -118,13 +118,13 @@ public class task_2 {
     }
 
 
-    public static int enqueue(LinkedList<Integer> earlBio) { //Добавляет элемент в конец сиска при вызове
+    public static int enqueue(LinkedList<Integer> earlBio) { //Добавляет элемент в конец списка при вызове
         // не понял как сделать что бы добавлял что типа append.
         earlBio.add(getRandomNumber(10));
-        int ae = earlBio.get(7); //по индексу не вышло вывести добавлениый элемент
-        // если ставить вывод по индексу  -1  выдает Exsrpsion
-        System.out.printf("Добавлениый элеменит %s\n", ae);
-//        System.out.printf("Добавлениый элеменит %s\n",earlBio);
+        int ae = earlBio.get(7); //по индексу не вышло вывести добавленный элемент
+        // если ставить вывод по индексу  -1  выдает Excretion
+        System.out.printf("Добавленный элемент %s\n", ae);
+//        System.out.printf("Добавленный элемент %s\n",earlBio);
 //        return earlBio;
         return ae;
     }

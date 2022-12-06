@@ -409,7 +409,10 @@ public class task_2 {
 ```
 
 # 3.* (дополнительное задание, сдавать не обязательно) В калькулятор добавьте возможность отменить последнюю операцию.
->
+> stak - прочитал что устарело заменяемый элемент deque
+> + logger
+> + deque
+> + замер времени
 ```java
 import java.util.ArrayDeque;
 import java.util.Objects;
@@ -433,6 +436,7 @@ public class task_3 {
      * @throws IOException
      */
     public static void main(String[] args) throws IOException {
+        long start = System.currentTimeMillis();//Старт замера времени
         Logger logger = Logger.getLogger(task_3.class.getName()); //init
         // Scanner iScanner = new Scanner(System.in);
         System.out.println("Что будем делать?");
@@ -498,6 +502,10 @@ public class task_3 {
                 c + "\n***************************************"); //перебор вывода в логер
         //блок стека DEQUE
 //        deque(c);
+        System.out.print("\nВремя работы для LinkedList (в миллисекундах) = " + (System.currentTimeMillis() - start));//вывод и замер времени
+        logger.info("\nВремя работы для LinkedList (в миллисекундах)" + +(System.currentTimeMillis() - start)
+                + "\n*====================================================*");
+
 
 
     }
