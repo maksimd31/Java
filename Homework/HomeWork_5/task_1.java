@@ -1,67 +1,81 @@
 package Homework.HomeWork_5;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Objects;
-import java.util.Scanner;
+import java.net.StandardSocketOptions;
+import java.util.*;
 
 public class task_1 {
     //1.Реализуйте структуру телефонной книги с помощью HashMap,
     // учитывая, что 1 человек может иметь несколько телефонов.
-
+/*
+HashMap - хранит значения в произвольном порядке, но позволяет быстро искать элементы карты. Позволяет задавать ключ или значение ключевым словом null.
+LinkedHashMap - хранит значения в порядке добавления.
+TreeMap - сама сортирует значения по заданному критерию. TreeMap используется либо с Comparable элементами, либо в связке с Comparator. Смотрите статью "Интерфейсы Comparable и Comparator".
+Hashtable - как HashMap, только не позволяет хранить null и синхронизирован с точки зрения многопоточности - это значит, что много потоков могут работать безопасно с Hashtable.
+Но данная реализация старая и медленная, поэтому сейчас уже не используется в новых проектах.
+ */
 
     /**
      * program
-     *
+     * <p>
      * Создать структуру для хранения Номеров паспортов и Фамилий сотрудников организации.
-     123456 Иванов
-     321456 Васильев
-     234561 Петрова
-     234432 Иванов
-     654321 Петрова
-     345678 Иванов
-     Вывести данные по сотрудникам с фамилией Иванов.
-
-     Иван Иванов
-     Светлана Петрова
-     Кристина Белова
-     Анна Мусина
-     Анна Крутова
-     Иван Юрин
-     Петр Лыков
-     Павел Чернов
-     Петр Чернышов
-     Мария Федорова
-     Марина Светлова
-     Мария Савина
-     Мария Рыкова
-     Марина Лугова
-     Анна Владимирова
-     Иван Мечников
-     Петр Петин
-     Иван Ежов
+     * 123456 Иванов
+     * 321456 Васильев
+     * 234561 Петрова
+     * 234432 Иванов
+     * 654321 Петрова
+     * 345678 Иванов
+     * Вывести данные по сотрудникам с фамилией Иванов.
+     * <p>
+     * Иван Иванов
+     * Светлана Петрова
+     * Кристина Белова
+     * Анна Мусина
+     * Анна Крутова
+     * Иван Юрин
+     * Петр Лыков
+     * Павел Чернов
+     * Петр Чернышов
+     * Мария Федорова
+     * Марина Светлова
+     * Мария Савина
+     * Мария Рыкова
+     * Марина Лугова
+     * Анна Владимирова
+     * Иван Мечников
+     * Петр Петин
+     * Иван Ежов
+     * <p>
+     * что будем делать!?
      */
-        public static void main(String[] args) {
+    public static void main(String[] args) {
+        String[] str = {"Иван Иванов = +7 988 888 33 22 +7 999 234 45 77\n"};
+        String[] str2 = {"Светлана Петрова = +7 888 21 22 +7 799 231 88 33\n"};
+        String[] str3 = {"Анна Мусина = +7 999 123 44 33 + 7 932 123 44 55\n"};
+        String[] str4 = {"Петр Лыков = +7 234 434 34 +7 832 233 23 44\n"};
+        String[] str5 = {"Марина Лугова = +7 234 434 24 +7 832 233 25 44\n"};
+        String[] str6 = {"Иван Ежов = +7 234 484 34 +7 832 233 23 41"};
 
-            Map<Integer, String> db = new HashMap<>(); //initi
-//            int table ;
-//            table = new Map.Entry[capacity];
+        ArrayList <String> subscribers = new ArrayList<>(Arrays.asList(str));
+        ArrayList <String> subscribers1 = new ArrayList<>(Arrays.asList(str2));
+        ArrayList <String> subscribers2 = new ArrayList<>(Arrays.asList(str3));
+        ArrayList <String> subscribers3 = new ArrayList<>(Arrays.asList(str4));
+        ArrayList <String> subscribers4 = new ArrayList<>(Arrays.asList(str5));
+        ArrayList <String> subscribers5 = new ArrayList<>(Arrays.asList(str6));
 
-            db.putIfAbsent(111, "Иванов");//добавляем
-            db.putIfAbsent(222, "Петров");
-            db.putIfAbsent(333, "Иванов");
 
-            Scanner iScanner = new Scanner(System.in);
-            System.out.printf("Кого ищем ? ");
-            String str = iScanner.nextLine();
-            iScanner.close();
+        //приабраззуем массив в Arrays.asList - Array list
+        /*
+            V putIfAbsent(K k, V v): помещает в коллекцию новый объект с ключом k и значением v,
+            если в коллекции еще нет элемента с подобным ключом.
+             */
+                HashMap<Integer, ArrayList<String>> name = new HashMap<>();
+                name.putIfAbsent(1, subscribers);
+                name.putIfAbsent(2, subscribers1);
+                name.putIfAbsent(3, subscribers2);
+                name.putIfAbsent(4, subscribers3);
+                name.putIfAbsent(5, subscribers4);
+                name.putIfAbsent(6, subscribers5);
 
-            for (Integer numPass : db.keySet()) {
-                if (Objects.equals(db.get(numPass).toLowerCase(), str.toLowerCase())){
-                    System.out.printf("Паспорт %d фамилия %s\n", numPass, db.get(numPass));
-                }
+
+                System.out.println(name);
             }
-
-            // System.out.println("Hello");
         }
-    }
-
