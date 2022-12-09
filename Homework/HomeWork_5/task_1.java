@@ -20,12 +20,33 @@ public class task_1 {
      654321 Петрова
      345678 Иванов
      Вывести данные по сотрудникам с фамилией Иванов.
+
+     Иван Иванов
+     Светлана Петрова
+     Кристина Белова
+     Анна Мусина
+     Анна Крутова
+     Иван Юрин
+     Петр Лыков
+     Павел Чернов
+     Петр Чернышов
+     Мария Федорова
+     Марина Светлова
+     Мария Савина
+     Мария Рыкова
+     Марина Лугова
+     Анна Владимирова
+     Иван Мечников
+     Петр Петин
+     Иван Ежов
      */
-    public class program {
         public static void main(String[] args) {
 
-            Map<Integer, String> db = new HashMap<>(); //init
-            db.putIfAbsent(111, "Иванов"); //добавляем
+            Map<Integer, String> db = new HashMap<>(); //initi
+//            int table ;
+//            table = new Map.Entry[capacity];
+
+            db.putIfAbsent(111, "Иванов");//добавляем
             db.putIfAbsent(222, "Петров");
             db.putIfAbsent(333, "Иванов");
 
@@ -44,4 +65,3 @@ public class task_1 {
         }
     }
 
-}
