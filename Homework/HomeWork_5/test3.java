@@ -13,7 +13,6 @@ public class test3 {
         }
         System.out.println(earlBio);
 
-
         //ArrayList<Integer> arrayList = new ArrayList<Integer>();
 //        int[]array = new int[1000];
 //        for (int i = 0; i < array.length; i++) {
