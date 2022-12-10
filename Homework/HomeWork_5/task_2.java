@@ -4,91 +4,34 @@ import java.util.*;
 
 public class task_2 {
     /*
-    2. Пусть дан список сотрудников:
-Иван Иванов
-Светлана Петрова
-Кристина Белова
-Анна Мусина
-Анна Крутова
-Иван Юрин
-Петр Лыков
-Павел Чернов
-Петр Чернышов
-Мария Федорова
-Марина Светлова
-Мария Савина
-Мария Рыкова
-Марина Лугова
-Анна Владимирова
-Иван Мечников
-Петр Петин
-Иван Ежов
-Написать программу,
-которая найдет и выведет повторяющиеся имена с количеством повторений.
-Отсортировать по убыванию популярности.
-     */
+Иван Иванов , Светлана Петрова, Кристина Белова, Анна Мусина
+Анна Крутова Иван Юрин Петр Лыков Павел Чернов Петр Чернышов
+Мария Федорова Марина Светлова Мария Савина Мария Рыкова
+Марина Лугова Анна Владимирова Иван Мечников Петр Петин Иван Ежов
+ */
     public static void main(String[] args) {
         String[] str = {"Иван Иванов", "Светлана Петрова", "Кристина Белова", "Анна Мусина", "Анна Крутова",
                 "Иван Юрин", "Петр Лыков", "Павел Чернов", "Петр Чернышов", "Мария Федорова", "Марина Светлова", "Мария Савина",
                 "Мария Рыкова", "Марина Лугова", "Анна Владимирова", "Иван Мечников", "Петр Петин", "Иван Ежов"};
-
-        ArrayList<String> staff = new ArrayList<>(Arrays.asList(str)); //реобразуем
-        for (int i = 0; i < staff.size(); i++) {
+        ArrayList <String> staff = new ArrayList<>(Arrays.asList(str)); //переводим массив в строку
+        TreeMap <Integer, String> names = new TreeMap<>(Collections.reverseOrder()); //init TerreMap (сортировка)
+        for (int i = 0; i < staff.size(); i++) { //xthtp for отделяем имена
             String[] FIO = staff.get(i).split(" ");
-            String name = FIO[0]; // разбираем по имени
-//            System.out.println(name);
+            String name = FIO[0];
+            int count = 0;
+            for (int j = 0; j < staff.size(); j++) { //через for отделяем фамилии
+                String[] FIO1 = staff.get(j).split(" ");
+                String name1 = FIO1[0];
+                if (name.equals(name1)) {
+                    count ++;
+                }
+            }
+            if (!names.containsValue(name)) { // унарныый оператор
+                names.put(count, name);
+            }
         }
-//        familia(staff);
-
-        ArrayList<String> listGroupCode = new ArrayList<>();
-        listGroupCode.add(String.valueOf(staff));
-
-        HashSet<String> set = new HashSet<>(listGroupCode);
-        ArrayList<String> result = new ArrayList<>(set);
-        if (result == result) {
-            System.out.println(result);
+        for (var el : names.entrySet()) {
+            System.out.printf("Количество повторений : %s Имена: %s", el.getKey(),el.getValue() + "\n");
         }
-
-
-//            System.out.println(result);
-
-
-////        TreeMap<Integer, String> names = new TreeMap<>(Collections.reverseOrder());
-//        List<String> allUsers = new ArrayList <>(Arrays.asList(str));
-//        Set<String> stringSet = new HashSet<>();
-//
-//        Set<String> setOfDupl = allUsers.stream().filter(e -> !stringSet.add(e)).collect(Collectors.toSet());
-//        setOfDupl.stream().forEach(System.out::println);
-
-
     }
-//        ArrayList<String> listGroupCode = new ArrayList<>();
-//        listGroupCode.add(name);
-//
-//        HashSet<String> set = new HashSet<>(listGroupCode);
-//        ArrayList<String> result = new ArrayList<>(set);
-//
-//        if (result == result) {
-//            System.out.println(result);
-//        }
-
-
-//    private static Object familia(ArrayList<String> staff) {
-//        for (int i = 0; i < staff.size(); i++) {
-//            String[] FIO = staff.get(i).split(" ");
-//            String name = FIO[0]; // разбираем по имени
-//
-////            System.out.println(name);
-//        }
-////        return null;
-//        return name;
-    }
-
-//
-//        private static void familia1 (ArrayList < String > staff) {
-//            for (int i = 0; i < staff.size(); i++) {
-//                String[] FIO = staff.get(i).split(" ");
-//                String name = FIO[1]; // разбираем по фамилиям
-//                System.out.println(name);
-//            }
-//        return;
+}
