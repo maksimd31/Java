@@ -1,6 +1,6 @@
 package Homework.HomeWork_5;
 
-public class task_2 {
+public class  task_2 {
     /*
     2. Пусть дан список сотрудников:
 Иван Иванов

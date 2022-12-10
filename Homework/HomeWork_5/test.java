@@ -26,7 +26,7 @@ public class test {
                 int value = Integer.parseInt(subscriber[1]); // – преобразует строку в число
 
                 ArrayList <Integer> number = new ArrayList<>();//созвем лист
-                number.add(value); // добовляем номера
+                number.add(value); // добавляем  номера
 
                 if (telephone.containsKey(key)) {
                     number.add(value);
