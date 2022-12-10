@@ -48,16 +48,8 @@ Hashtable - как HashMap, только не позволяет хранить 
         name.putIfAbsent(5, subscribers4);
         name.putIfAbsent(6, subscribers5);
 
-        Scanner iScanner = new Scanner(System.in);
-        System.out.printf("Кого ищем ? ");
-        String strr = iScanner.nextLine();
-        iScanner.close();
+        System.out.println(name);
 
-        for (Integer numPass : name.keySet()) {
-            if (Objects.equals(name.get(numPass), strr)) {
-                System.out.printf("id %d справочник %s\n", numPass, name.get(numPass));
-            }
-        }
 
     }
 }

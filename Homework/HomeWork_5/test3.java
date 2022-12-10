@@ -1,47 +1,38 @@
 package Homework.HomeWork_5;
-
-import java.util.*;
-
-// import static java.util.Arrays.*;
-
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.TreeMap;
 public class test3 {
+    /*
+    Иван Иванов , Светлана Петрова, Кристина Белова, Анна Мусина
+Анна Крутова Иван Юрин Петр Лыков Павел Чернов Петр Чернышов
+Мария Федорова Марина Светлова Мария Савина Мария Рыкова
+Марина Лугова Анна Владимирова Иван Мечников Петр Петин Иван Ежов
+     */
     public static void main(String[] args) {
-        Random rnd = new Random();
-        List<Integer> earlBio = new LinkedList<>();
-        for (int i = 0; i < 10; i++) {
-            earlBio.add(rnd.nextInt(100));
+        String[] str = {"Иван Иванов", "Светлана Петрова", "Кристина Белова", "Анна Мусина", "Анна Крутова",
+                "Иван Юрин", "Петр Лыков", "Павел Чернов", "Петр Чернышов", "Мария Федорова", "Марина Светлова", "Мария Савина",
+                "Мария Рыкова", "Марина Лугова", "Анна Владимирова", "Иван Мечников", "Петр Петин", "Иван Ежов"};
+        ArrayList <String> staff = new ArrayList<>(Arrays.asList(str)); //переводим массив в строку
+        TreeMap <Integer, String> names = new TreeMap<>(Collections.reverseOrder()); //init TerreMap (сортировка)
+        for (int i = 0; i < staff.size(); i++) { //xthtp for отделяем имена
+            String[] FIO = staff.get(i).split(" ");
+            String name = FIO[0];
+            int count = 0;
+            for (int j = 0; j < staff.size(); j++) { //через for отделяем фамилии
+                String[] FIO1 = staff.get(j).split(" ");
+                String name1 = FIO1[0];
+                if (name.equals(name1)) {
+                    count ++;
+                }
+            }
+            if (!names.containsValue(name)) { // унарныый оператор
+                names.put(count, name);
+            }
         }
-        System.out.println(earlBio);
-
-        //ArrayList<Integer> arrayList = new ArrayList<Integer>();
-//        int[]array = new int[1000];
-//        for (int i = 0; i < array.length; i++) {
-//            array[i] = (int)(Math.random()*24);
-//        }
-//
-//        ArrayList<Integer> set= new ArrayList<>(Arrays.asList(array));
-
-
-        // Set<Integer> set = new HashSet<>(Arrays.asList(array));
-//
-//        for (int i = 0; i < 1000; i++) {
-//            arrayList .add(getRandomNumber());}
-
-        Set<Integer> set = new HashSet<>(earlBio);
-
-
-        set.forEach((k) -> {
-            System.out.printf("%s ", k);
-        });
-
+        for (var el : names.entrySet()) {
+            System.out.printf("Количество повторений : %s Имена: %s", el.getKey(),el.getValue() + "\n");
+        }
     }
-//    public static int getRandomNumber() { // генерирует случайное число
-//        double x = (Math.random() * 24);
-//        int num = (int) x;
-//        return num;
-//    }
 }
-
-
-
-

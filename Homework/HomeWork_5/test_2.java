@@ -1,38 +1,32 @@
 package Homework.HomeWork_5;
 
-// import java.util.ArrayList;
-import java.util.HashMap;
-// import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class test_2 {
     public static void main(String[] args) {
-        Map<String, String> bookFone = new HashMap<>();
-        bookFone.put("Иванов И.И.", "2-23-23");
-        bookFone.put("Звягтин А.А.", "3-23-63");
-        bookFone.put("Приввалов Д.Н.", "2-76-53");
-        bookFone.put("Смирнов К.А.", "3 -15-78");
-        bookFone.put("Любомиров С.С.", "2-23-89, 2-43-53");
-        bookFone.put("Горшкок П.К.", "2-15-13");
-        bookFone.put("Лобанов Г.О.", "3-78-99, 2-29-00");
-        System.out.println(bookFone.get("Иванов И.И."));
-        System.out.println(bookFone.get("Лобанов Г.О."));
-
-        addBookFone(bookFone, "Костров Б.Е.", "2-02-45");
-
-        System.out.println(bookFone.get("Костров Б.Е."));
-
-        deleteBookFone(bookFone, "Иванов И.И.");
-
-        System.out.println(bookFone);
+        String[] str = {"Иван Иванов", "Светлана Петрова", "Кристина Белова", "Анна Мусина", "Анна Крутова",
+                "Иван Юрин", "Петр Лыков", "Павел Чернов", "Петр Чернышов", "Мария Федорова", "Марина Светлова", "Мария Савина",
+                "Мария Рыкова", "Марина Лугова", "Анна Владимирова", "Иван Мечников", "Петр Петин", "Иван Ежов"};
+        ArrayList <String> staff = new ArrayList<>(Arrays.asList(str));
+        TreeMap <Integer, String> names = new TreeMap<>(Collections.reverseOrder());
+        for (int i = 0; i < staff.size(); i++) {
+            String[] FIO = staff.get(i).split(" ");
+            String name = FIO[1];
+            int count = 0;
+            for (int j = 0; j < staff.size(); j++) {
+                String[] FIO1 = staff.get(j).split(" ");
+                String name1 = FIO1[1];
+                if (name.equals(name1)) {
+                    count ++;
+                }
+            }
+            if (!names.containsValue(name)) {
+                names.put(count, name);
+            }
+        }
+        for (var el : names.entrySet()) {
+            System.out.print(el.getKey() + " " + el.getValue() + "\n");
+        }
     }
+}
 
-    // Добавить или изменить или изменить данные
-    public static void addBookFone(Map<String, String> dict, String name, String number){
-        dict.put(name, number);
-    }
-    // Удалить данные
-    public static void deleteBookFone(Map<String, String> dict, String name){
-        dict.remove(name);
-    }
-    }
