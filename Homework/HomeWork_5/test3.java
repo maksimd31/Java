@@ -2,7 +2,7 @@ package Homework.HomeWork_5;
 
 import java.util.*;
 
-import static java.util.Arrays.*;
+// import static java.util.Arrays.*;
 
 public class test3 {
     public static void main(String[] args) {

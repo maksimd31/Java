@@ -22,52 +22,57 @@ public class task_3 {
         System.out.println("3 - Деление");
         System.out.println("4 - Умножение");
         System.out.print("Отлично! Начнем : ");
-        Scanner sc = new Scanner(System.in); //Считываем с клавы 
-        int vibor = sc.nextInt(); // записываем результат в переменную 
+        try (Scanner sc = new Scanner(System.in)) {
+            int vibor = sc.nextInt(); // записываем результат в переменную 
+            
 
 
-        System.out.print("Введите первое число : "); 
-        int x = sc.nextInt();//записываем результат в переменную 
-        logger.info(Integer.toString(x)); // записываем в логгер 
+            System.out.print("Введите первое число : "); 
+            int x = sc.nextInt();//записываем результат в переменную 
+            logger.info(Integer.toString(x)); // записываем в логгер 
 
 
-        System.out.print("Введите второе число : ");
-        int y = sc.nextInt();
-        logger.info(Integer.toString(y));// записываем в логгер 
+            System.out.print("Введите второе число : ");
+            int y = sc.nextInt();
+            logger.info(Integer.toString(y));// записываем в логгер 
 
-        int c = 0; //счетчик 
-        
-        FileHandler fh = new FileHandler("logTask_3.log", true); //создаем log 
-        logger.addHandler(fh); //Объект используется для регистрации сообщений для конкретной системы или компонента приложения.
-        SimpleFormatter log = new SimpleFormatter();
-        fh.setFormatter(log);
-        String str = String.format("%d", vibor); //форматируем int в string 
-        logger.info(str); //запмсываем в логгер / записывается только в str 
+            int c = 0; //счетчик 
+            
+            FileHandler fh = new FileHandler("logTask_3.log", true); //создаем log 
+            logger.addHandler(fh); //Объект используется для регистрации сообщений для конкретной системы или компонента приложения.
+            SimpleFormatter log = new SimpleFormatter();
+            fh.setFormatter(log);
+            String str = String.format("%d", vibor); //форматируем int в string 
+            logger.info(str); //записываем в логгер / записывается только в str 
 
-        
-        switch (vibor){
-            case 1:
-                c = x + y;
-                System.out.printf("Ответ %d",c);
-                break;
+            
+            switch (vibor){
+                case 1:
+                    c = x + y;
+                    System.out.printf("Ответ %d",c);
+                    break;
 
-            case 2:
-                c = x - y;
-                System.out.printf("Ответ %d",c);
-                break;
+                case 2:
+                    c = x - y;
+                    System.out.printf("Ответ %d",c);
+                    break;
 
-            case 3:
-                c = x / y;
-                System.out.printf("Ответ %d",c);
-                break;
+                case 3:
+                    c = x / y;
+                    System.out.printf("Ответ %d",c);
+                    break;
 
-            case 4:
-                c = x * y;
-                System.out.printf("Ответ %d",c);
-                break;
-                
-            }
-            logger.info(Float.toString(x) + " " + str + " " + Float.toString(y) + " " + "=" + " " + c); //перебор вывода в логер
+                case 4:
+                    c = x * y;
+                    System.out.printf("Ответ %d",c);
+                    break;
+                    
+                }
+                logger.info(Float.toString(x) + " " + str + " " + Float.toString(y) + " " + "=" + " " + c); //перебор вывода в логер
+        } catch (SecurityException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
         
 
     }

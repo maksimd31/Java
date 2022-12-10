@@ -1,12 +1,12 @@
 package Homework.HomeWork_5;
 
-import java.net.StandardSocketOptions;
+// import java.net.StandardSocketOptions;
 import java.util.*;
 /*
-если все же заходит реч о телефонном справрчнике Hashmap  на мой вгляд не самый подходящий маетод
+если все же заходит реч о телефонном справочнике Hashmap  на мой взгляд не самый подходящий метод
 ели рассматривать логику справочника то я вижу ее так.
-Каждого пользователя заводить отдельной сущьносью и потом присваеевать к ним ключ hashmap,
-затем прикрутить поиск
+Каждого пользователя заводить отдельной сущностью и потом присватывать к ним ключ hashmap,
+затем прикрутить поиск по массиву.
 
  */
 public class task_1 {
@@ -35,7 +35,7 @@ Hashtable - как HashMap, только не позволяет хранить 
         ArrayList<String> subscribers5 = new ArrayList<>(Arrays.asList(str6));
 
 
-        //приабраззуем массив в Arrays.asList - Array list
+        //преобразуем массив в Arrays.asList - Array list
         /*
             V putIfAbsent(K k, V v): помещает в коллекцию новый объект с ключом k и значением v,
             если в коллекции еще нет элемента с подобным ключом.
@@ -55,7 +55,7 @@ Hashtable - как HashMap, только не позволяет хранить 
 
         for (Integer numPass : name.keySet()) {
             if (Objects.equals(name.get(numPass), strr)) {
-                System.out.printf("id %d спарвочник %s\n", numPass, name.get(numPass));
+                System.out.printf("id %d справочник %s\n", numPass, name.get(numPass));
             }
         }
 
