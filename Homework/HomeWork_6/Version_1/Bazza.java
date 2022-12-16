@@ -18,6 +18,7 @@ public class Bazza {
         this.RAM = RAM;
         this.SSD = SSD;
         this.HDD = HDD;
+        
     }
 
     /**
